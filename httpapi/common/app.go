@@ -3,11 +3,11 @@ package common
 import (
 	"log"
 
+	"encoding/json"
+	"fmt"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"github.com/miolini/bankgo/core"
-	"encoding/json"
-	"fmt"
 	"github.com/miolini/bankgo/rpc/client"
 )
 

@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	flAddr = flag.String("l", "127.0.0.1:14080", "http api listen addr:port")
+	flAddr    = flag.String("l", "127.0.0.1:14080", "http api listen addr:port")
 	flRpcAddr = flag.String("rpc", "127.0.0.1:14090", "rpc api listen addr:port")
 )
 
