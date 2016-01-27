@@ -1,5 +1,0 @@
-package: github.com/miolini/bankgo
-import:
-- package: github.com/labstack/echo
-  subpackages:
-  - middleware
