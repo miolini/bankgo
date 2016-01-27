@@ -12,6 +12,7 @@ import (
 
 var (
 	ErrNotFound = errors.New("UserID not found")
+	ErrUserIDBadValue = errors.New("UserID must be greater 0")
 )
 
 type BalanceStorageServer struct {
@@ -59,10 +60,13 @@ func (bss *BalanceStorageServer) Close() {
 }
 
 func (bss *BalanceStorageServer) getShard(userID int64) *dataShard {
-	return bss.dataShards[int(userID%bss.dataShardsCount)]
+	return bss.dataShards[int(userID % bss.dataShardsCount)]
 }
 
 func (bss *BalanceStorageServer) Get(ctx context.Context, request *proto.GetRequest) (*proto.BalanceResponse, error) {
+	if request.UserId < 1 {
+		return ErrUserIDBadValue
+	}
 	shard := bss.getShard(request.UserId)
 	shard.RLock()
 	value, ok := shard.data[request.UserId]
@@ -74,6 +78,9 @@ func (bss *BalanceStorageServer) Get(ctx context.Context, request *proto.GetRequ
 }
 
 func (bss *BalanceStorageServer) Increment(ctx context.Context, request *proto.IncrementRequest) (*proto.BalanceResponse, error) {
+	if request.UserId < 1 {
+		return ErrUserIDBadValue
+	}
 	shard := bss.getShard(request.UserId)
 	shard.Lock()
 	value, ok := shard.data[request.UserId]
@@ -88,6 +95,9 @@ func (bss *BalanceStorageServer) Increment(ctx context.Context, request *proto.I
 }
 
 func (bss *BalanceStorageServer) Set(ctx context.Context, request *proto.SetRequest) (*proto.BalanceResponse, error) {
+	if request.UserId < 1 {
+		return ErrUserIDBadValue
+	}
 	shard := bss.getShard(request.UserId)
 	shard.Lock()
 	shard.data[request.UserId] = request.Value
