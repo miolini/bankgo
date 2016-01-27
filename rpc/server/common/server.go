@@ -5,9 +5,9 @@ import (
 	"net"
 	"sync"
 
-	"google.golang.org/grpc"
-	"golang.org/x/net/context"
 	"github.com/miolini/bankgo/rpc/proto"
+	"golang.org/x/net/context"
+	"google.golang.org/grpc"
 )
 
 var (
@@ -59,7 +59,7 @@ func (bss *BalanceStorageServer) Close() {
 }
 
 func (bss *BalanceStorageServer) getShard(userID int64) *dataShard {
-	return bss.dataShards[int(userID % bss.dataShardsCount)]
+	return bss.dataShards[int(userID%bss.dataShardsCount)]
 }
 
 func (bss *BalanceStorageServer) Get(ctx context.Context, request *proto.GetRequest) (*proto.BalanceResponse, error) {
