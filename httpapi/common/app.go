@@ -44,7 +44,7 @@ func (app *App) handleGetBalances(ctx *echo.Context) error {
 	if err != nil {
 		return err
 	}
-	core.EchoReplyJson(ctx, records)
+	replyJson(ctx, records)
 	return nil
 }
 
@@ -61,12 +61,10 @@ func (app *App) handlePostTransaction(ctx *echo.Context) error {
 	return replyJson(ctx, balance)
 }
 
-// EchoReplyJson reply with json standart structure with filed response
 func replyJson(ctx *echo.Context, v interface{}) error {
 	return ctx.JSON(200, map[string]interface{}{"response": v})
 }
 
-// EchoReplyJsonError reply with json standart error structure
 func replyJsonError(ctx *echo.Context, err interface{}) error {
 	return ctx.JSON(400, map[string]interface{}{"error": fmt.Sprintf("%s", err)})
 }
