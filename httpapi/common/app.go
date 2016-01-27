@@ -54,6 +54,9 @@ func (app *App) handlePostTransaction(ctx *echo.Context) error {
 	if err != nil {
 		return replyJsonError(ctx, fmt.Errorf("json parse error: %s", err))
 	}
+	if balance.UserID < 1 {
+		return replyJsonError(ctx, "UserID must be greater than 0")
+	}
 	balance.Value, err = app.client.SetValue(balance.UserID, balance.Value)
 	if err != nil {
 		return replyJsonError(ctx, err)

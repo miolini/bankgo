@@ -12,7 +12,7 @@ import (
 
 var (
 	ErrNotFound = errors.New("UserID not found")
-	ErrUserIDBadValue = errors.New("UserID must be greater 0")
+	ErrUserIDBadValue = errors.New("UserID must be greater than 0")
 )
 
 type BalanceStorageServer struct {
