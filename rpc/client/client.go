@@ -1,9 +1,9 @@
 package client
 
 import (
-	"google.golang.org/grpc"
 	"github.com/miolini/bankgo/rpc/proto"
 	"golang.org/x/net/context"
+	"google.golang.org/grpc"
 )
 
 type BalanceRecord struct {
@@ -32,19 +32,19 @@ func (bsc *BalanceStorageClient) Close() {
 }
 
 func (bsc *BalanceStorageClient) GetBalance(userID int64) (int64, error) {
-	request := proto.GetRequest{UserId:userID}
+	request := proto.GetRequest{UserId: userID}
 	response, err := bsc.client.Get(context.Background(), &request)
 	return response.Value, err
 }
 
 func (bsc *BalanceStorageClient) SetValue(userID int64, value int64) (int64, error) {
-	request := proto.SetRequest{UserId:userID, Value: value}
+	request := proto.SetRequest{UserId: userID, Value: value}
 	response, err := bsc.client.Set(context.Background(), &request)
 	return response.Value, err
 }
 
 func (bsc *BalanceStorageClient) IncrementValue(userID int64, amount int64) (int64, error) {
-	request := proto.IncrementRequest{UserId:userID, Amount: amount}
+	request := proto.IncrementRequest{UserId: userID, Amount: amount}
 	response, err := bsc.client.Increment(context.Background(), &request)
 	return response.Value, err
 }

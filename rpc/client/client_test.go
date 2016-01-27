@@ -1,9 +1,9 @@
 package client
 
 import (
-	"testing"
 	"github.com/miolini/bankgo/rpc/server/common"
 	"log"
+	"testing"
 	"time"
 )
 
