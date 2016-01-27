@@ -1,0 +1,22 @@
+hash: 1e099518c7c3e62b91ae3529b27d7fb558ce37424479cb31473cb0690b6b4865
+updated: 2016-01-27T16:31:58.179365115+03:00
+imports:
+- name: github.com/labstack/echo
+  version: 1bf719830a2bda87585b8c0eadeab680be6837a4
+  subpackages:
+  - middleware
+- name: github.com/labstack/gommon
+  version: 25c3ce2d2abe76d8dd935305f1a8c1063dd3aac3
+- name: github.com/mattn/go-colorable
+  version: 4af63d73f5bea08b682ad2cd198b1e607afd6be0
+- name: github.com/mattn/go-isatty
+  version: 56b76bdf51f7708750eac80fa38b952bb9f32639
+- name: golang.org/x/crypto
+  version: 1f22c0103821b9390939b6776727195525381532
+  repo: https://golang.org/x/crypto
+- name: golang.org/x/net
+  version: 04b9de9b512f58addf28c9853d50ebef61c3953e
+- name: golang.org/x/text
+  version: 6d3c22c4525a4da167968fa2479be5524d2e8bd0
+  repo: https://golang.org/x/text
+devImports: []
