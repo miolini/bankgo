@@ -12,7 +12,7 @@ docker_build:
 	docker build -t bankgo_http ./httpapi/server
 	docker build -t bankgo_rpc ./rpc/server
 
-docker: docker_clean docker_build
+docker: docker_build
 	docker-compose up
 
 test:
