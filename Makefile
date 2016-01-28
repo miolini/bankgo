@@ -9,8 +9,8 @@ docker_clean:
 	docker rmi -f bankgo/rpc || true
 
 docker_build:
-	docker build -no-cache=true --rm -t bankgo/http ./httpapi/server
-	docker build -no-cache=true --rm -t bankgo/rpc ./rpc/server
+	docker build --no-cache=true --rm -t bankgo/http ./httpapi/server
+	docker build --no-cache=true --rm -t bankgo/rpc ./rpc/server
 
 docker: docker_build
 	docker-compose up
