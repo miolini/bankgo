@@ -1,4 +1,4 @@
-# BangGO
+# BankGO
 
 Simple two app project represents simplest bank in the world ;-)
 
