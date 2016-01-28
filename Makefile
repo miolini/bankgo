@@ -16,7 +16,7 @@ docker: docker_build
 	docker-compose up
 
 test:
-	go test -v ./...
+	go test -v -race ./...
 
 doc:
 	aglio -i httpapi.md -o api.html
