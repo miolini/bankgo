@@ -9,7 +9,7 @@ import (
 
 var (
 	flAddr    = flag.String("l", ":14080", "http api listen addr:port")
-	flRpcAddr = flag.String("rpc", "127.0.0.1:14090", "rpc api listen addr:port")
+	flRpcAddr = flag.String("rpc", "rpc:14090", "rpc api listen addr:port")
 )
 
 func main() {
