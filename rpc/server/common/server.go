@@ -2,13 +2,13 @@ package common
 
 import (
 	"errors"
+	"log"
 	"net"
 	"sync"
 
 	"github.com/miolini/bankgo/rpc/proto"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
-	"log"
 )
 
 const (
@@ -18,6 +18,7 @@ const (
 var (
 	ErrNotFound = errors.New("UserID not found")
 	ErrUserIDBadValue = errors.New("UserID must be greater than 0")
+	ErrDecreaseNegativeBalance = errors.New("Descrease negative balance")
 )
 
 type BalanceStorageServer struct {
@@ -84,18 +85,26 @@ func (bss *BalanceStorageServer) Get(ctx context.Context, request *proto.GetRequ
 }
 
 func (bss *BalanceStorageServer) Increment(ctx context.Context, request *proto.IncrementRequest) (*proto.BalanceResponse, error) {
+	var err error
 	if request.UserId < 1 {
 		return nil, ErrUserIDBadValue
 	}
 	shard := bss.getShard(request.UserId)
 	shard.Lock()
 	value, ok := shard.data[request.UserId]
-	if !ok {
-		value = StartBalance
+	if value < 0 && request.Amount < 0 {
+		err = ErrDecreaseNegativeBalance
+	} else {
+		if !ok {
+			value = StartBalance
+		}
+		value += request.Amount
+		shard.data[request.UserId] = value
 	}
-	value += request.Amount
-	shard.data[request.UserId] = value
 	shard.Unlock()
+	if err != nil {
+		return nil, err
+	}
 	return &proto.BalanceResponse{Value: value}, nil
 }
 
