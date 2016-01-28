@@ -2,3 +2,5 @@
 .DS_Store
 .idea
 *.iml
+bankgo_http
+bankgo_rpc
