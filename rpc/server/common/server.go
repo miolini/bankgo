@@ -8,6 +8,7 @@ import (
 	"github.com/miolini/bankgo/rpc/proto"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
+	"log"
 )
 
 const (
@@ -15,7 +16,7 @@ const (
 )
 
 var (
-	ErrNotFound       = errors.New("UserID not found")
+	ErrNotFound = errors.New("UserID not found")
 	ErrUserIDBadValue = errors.New("UserID must be greater than 0")
 )
 
@@ -47,6 +48,7 @@ func NewServer(addr string) (*BalanceStorageServer, error) {
 		bss.dataShards[i] = newDataShard()
 	}
 	var err error
+	log.Printf("run rpc on %s", addr)
 	if bss.listener, err = net.Listen("tcp", addr); err != nil {
 		return nil, err
 	}
@@ -64,7 +66,7 @@ func (bss *BalanceStorageServer) Close() {
 }
 
 func (bss *BalanceStorageServer) getShard(userID int64) *dataShard {
-	return bss.dataShards[int(userID%bss.dataShardsCount)]
+	return bss.dataShards[int(userID % bss.dataShardsCount)]
 }
 
 func (bss *BalanceStorageServer) Get(ctx context.Context, request *proto.GetRequest) (*proto.BalanceResponse, error) {

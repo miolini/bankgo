@@ -37,6 +37,7 @@ func (app *App) Init(rpcAddr string) error {
 }
 
 func (app *App) Run(addr string) error {
+	log.Printf("run http api on %s", addr)
 	return http.ListenAndServe(addr, app.router)
 }
 
