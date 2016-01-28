@@ -1,6 +1,6 @@
-all: depends test build
+all: docker
 
-build:
+build: depends test
 	go build -o bankgo_http ./httpapi/server
 	go build -o bankgo_rpc ./rpc/server
 
