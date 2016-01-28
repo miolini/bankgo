@@ -19,5 +19,7 @@ func main() {
 	if err = app.Init(*flRpcAddr); err != nil {
 		log.Fatalf("init error: %s", err)
 	}
-	app.Run(*flAddr)
+	if err = app.Run(*flAddr); err != nil {
+		log.Fatalf("run error: %s", err)
+	}
 }

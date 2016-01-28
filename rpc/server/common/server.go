@@ -10,8 +10,12 @@ import (
 	"google.golang.org/grpc"
 )
 
+const (
+	StartBalance = 100
+)
+
 var (
-	ErrNotFound = errors.New("UserID not found")
+	ErrNotFound       = errors.New("UserID not found")
 	ErrUserIDBadValue = errors.New("UserID must be greater than 0")
 )
 
@@ -60,7 +64,7 @@ func (bss *BalanceStorageServer) Close() {
 }
 
 func (bss *BalanceStorageServer) getShard(userID int64) *dataShard {
-	return bss.dataShards[int(userID % bss.dataShardsCount)]
+	return bss.dataShards[int(userID%bss.dataShardsCount)]
 }
 
 func (bss *BalanceStorageServer) Get(ctx context.Context, request *proto.GetRequest) (*proto.BalanceResponse, error) {
@@ -84,13 +88,12 @@ func (bss *BalanceStorageServer) Increment(ctx context.Context, request *proto.I
 	shard := bss.getShard(request.UserId)
 	shard.Lock()
 	value, ok := shard.data[request.UserId]
-	if ok {
-		shard.data[request.UserId] = value + request.Amount
-	}
-	shard.Unlock()
 	if !ok {
-		return nil, ErrNotFound
+		value = StartBalance
 	}
+	value += request.Amount
+	shard.data[request.UserId] = value
+	shard.Unlock()
 	return &proto.BalanceResponse{Value: value}, nil
 }
 

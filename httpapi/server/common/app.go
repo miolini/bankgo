@@ -8,6 +8,7 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"github.com/miolini/bankgo/rpc/client"
+	"net/http"
 )
 
 type BalanceEntry struct {
@@ -35,8 +36,8 @@ func (app *App) Init(rpcAddr string) error {
 	return nil
 }
 
-func (app *App) Run(addr string) {
-	app.router.Run(addr)
+func (app *App) Run(addr string) error {
+	return http.ListenAndServe(addr, app.router)
 }
 
 func (app *App) handleGetBalances(ctx *echo.Context) error {

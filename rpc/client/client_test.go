@@ -7,15 +7,13 @@ import (
 	"time"
 )
 
-var (
-	client *BalanceStorageClient
-)
+func TestClientGet(t *testing.T) {
+	var client *BalanceStorageClient
 
-func TestMain(m *testing.M) {
-	addr := "127.0.0.1:14090"
+	addr := "127.0.0.1:17090"
 	server, err := common.NewServer(addr)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	go func() {
 		if err = server.Run(); err != nil {
@@ -34,14 +32,17 @@ func TestMain(m *testing.M) {
 	} else {
 		log.Printf("connected")
 	}
-}
 
-func TestClientGet(t *testing.T) {
-	value, err := client.GetBalance(1)
+	value, err := client.IncrementValue(1, 10)
 	if err != nil {
 		t.Fatal(err)
 	}
-	if value != 100 {
-		t.Fatalf("balance for new user not equals 100: %d", value)
+	value, err = client.IncrementValue(1, -20)
+	if err != nil {
+		t.Fatal(err)
 	}
+	if value != 90 {
+		t.Fatalf("balance not equals to 90: %d", value)
+	}
+	t.Logf("balance tested")
 }
