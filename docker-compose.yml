@@ -3,8 +3,8 @@ http:
     - "14080:14080"
   links:
     - rpc
-  image: bankgo_http
+  image: bankgo/http
 rpc:
   ports:
     - "14090:14090"
-  image: bankgo_rpc
+  image: bankgo/rpc
