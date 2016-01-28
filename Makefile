@@ -29,3 +29,8 @@ doc_depends:
 
 proto:
 	protoc --go_out=plugins=grpc:rpc/proto rpc/proto/balancestorage.proto
+
+testcoverage:
+	go get github.com/axw/gocov/gocov
+	go get gopkg.in/matm/v1/gocov-html
+	gocov test ./... | gocov-html > testcoverage.html
