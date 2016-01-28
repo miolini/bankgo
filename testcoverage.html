@@ -1,0 +1,197 @@
+
+<html>
+    <head>
+        <title>Coverage Report</title>
+        
+        <style type="text/css">
+            body { background-color: #fff; }
+            table {
+                margin-left: 10px;
+                border-collapse: collapse;
+            }
+            td { 
+                background-color: #fff; 
+                padding: 2px;
+            }
+            table.overview td {
+                padding-right: 20px;
+            }
+            td.percent, td.linecount { text-align: right; }
+            div.package, #totalcov { 
+                color: #fff;
+                background-color: #375eab; 
+                font-size: 16px;
+                font-weight: bold;
+                padding: 10px;
+                border-radius: 5px 5px 5px 5px;
+            }
+            div.package, #totalcov { 
+                float: right; 
+                right: 10px;
+            }
+            #totalcov { 
+                top: 10px;
+                position: relative;
+                background-color: #fff;
+                color: #000;
+                border: 1px solid #375eab;
+                clear: both;
+            }
+            #summaryWrapper {
+                position: fixed;
+                top: 10px;
+                float: right;
+                right: 10px;
+
+            }
+            span.packageTotal {
+                float: right;
+                color: #000;
+            }
+            #doctitle { 
+                background-color: #fff; 
+                font-size: 24px;
+                margin-top: 20px;
+                margin-left: 10px;
+                color: #375eab;
+                font-weight: bold;
+            }
+            #about {
+                margin-left: 18px;
+                font-size: 10px;
+            }
+            table tr:last-child td {
+                font-weight: bold;
+            }
+            .functitle, .funcname { 
+                text-align: center; 
+                font-size: 20px; 
+                font-weight: bold; 
+                color: 375eab; 
+            }
+            .funcname {
+                text-align: left;
+                margin-top: 20px;
+                margin-left: 10px;
+                margin-bottom: 20px;
+                padding: 2px 5px 5px;
+                background-color: #e0ebf5;
+            }
+            table.listing {
+                margin-left: 10px;
+            }
+            table.listing td {
+                padding: 0px;
+                font-size: 12px;
+                background-color: #eee; 
+                vertical-align: top;
+                padding-left: 10px;
+                border-bottom: 1px solid #fff;
+            }
+            table.listing td:first-child {
+                text-align: right;
+                font-weight: bold;
+                vertical-align: center;
+            }
+            table.listing tr.miss td {
+                background-color: #FFBBB8;
+            }
+            table.listing tr:last-child td {
+                font-weight: normal;
+                color: #000;
+            }
+            table.listing tr:last-child td:first-child {
+                font-weight: bold;
+            }
+            .info {
+                margin-left: 10px;
+            }
+            .info code {
+            }
+            pre { margin: 1px; }
+            pre.cmd { 
+                background-color: #e9e9e9;
+                border-radius: 5px 5px 5px 5px;
+                padding: 10px;
+                margin: 20px;
+                line-height: 18px;
+                font-size; 14px;
+            }
+            a { 
+                text-decoration: none; 
+                color: #375eab;
+            }
+            a:hover { text-decoration: underline; }
+            p { margin-left: 10px; }
+        </style>
+        
+    </head>
+    <body>
+        <div id="doctitle">Coverage Report</div>
+    <div id="about">Generated on 28 Jan 16 16:10 +0300 with <a href="https://github.com/matm/gocov-html">gocov-html</a></div><div class="funcname">Report Overview</div><table class="overview">
+<tr id="s_pkg_github.com/miolini/bankgo/httpapi/client"><td><code><a href="#pkg_github.com/miolini/bankgo/httpapi/client">github.com/miolini/bankgo/httpapi/client</a></code></td><td class="percent"><code>80.49%</code></td><td class="linecount"><code>33/41</code></td></tr>
+<tr id="s_pkg_github.com/miolini/bankgo/rpc/client"><td><code><a href="#pkg_github.com/miolini/bankgo/rpc/client">github.com/miolini/bankgo/rpc/client</a></code></td><td class="percent"><code>33.33%</code></td><td class="linecount"><code>10/30</code></td></tr>
+<tr><td><code>Report Total</code></td><td class="percent"><code>60.56%</code></td><td class="linecount"><code>43/71</code></td></tr>
+</table>
+<div id="pkg_github.com/miolini/bankgo/httpapi/client" class="funcname">Package Overview: github.com/miolini/bankgo/httpapi/client <span class="packageTotal">80.49%</span></div><p>This is a coverage report created after analysis of the <code>github.com/miolini/bankgo/httpapi/client</code> package. It 
+        has been generated with the following command:</p><pre class="cmd">gocov test github.com/miolini/bankgo/httpapi/client | gocov-html</pre>        <p>Here are the stats. Please select a function name to view its implementation and see what's left for testing.</p><table class="overview">
+<tr id="s_fn_NewHttpApiClient"><td><code><a href="#fn_NewHttpApiClient">NewHttpApiClient(...)</a></code></td><td><code>github.com/miolini/bankgo/httpapi/client/client.go</code></td><td class="percent"><code>100.00%</code></td><td class="linecount"><code>4/4</code></td></tr>
+<tr id="s_fn_HttpApiClient.request"><td><code><a href="#fn_HttpApiClient.request">HttpApiClient.request(...)</a></code></td><td><code>github.com/miolini/bankgo/httpapi/client/client.go</code></td><td class="percent"><code>81.82%</code></td><td class="linecount"><code>18/22</code></td></tr>
+<tr id="s_fn_HttpApiClient.PostTransaction"><td><code><a href="#fn_HttpApiClient.PostTransaction">HttpApiClient.PostTransaction(...)</a></code></td><td><code>github.com/miolini/bankgo/httpapi/client/client.go</code></td><td class="percent"><code>75.00%</code></td><td class="linecount"><code>6/8</code></td></tr>
+<tr id="s_fn_HttpApiClient.GetBalances"><td><code><a href="#fn_HttpApiClient.GetBalances">HttpApiClient.GetBalances(...)</a></code></td><td><code>github.com/miolini/bankgo/httpapi/client/client.go</code></td><td class="percent"><code>71.43%</code></td><td class="linecount"><code>5/7</code></td></tr>
+<tr><td colspan="2"><code>github.com/miolini/bankgo/httpapi/client</code></td><td class="percent"><code>80.49%</code></td><td class="linecount"><code>33/41</code></td></tr>
+</table>
+
+<div class="funcname" id="fn_NewHttpApiClient">func NewHttpApiClient</div><div class="info"><a href="#s_fn_NewHttpApiClient">Back</a><p>In <code>/Users/miolini/go/src/github.com/miolini/bankgo/httpapi/client/client.go</code>:</p></div><table class="listing">
+<tr><td>46</td><td><code><pre>func NewHttpApiClient(baseUrl string) *HttpApiClient {</pre></code></td></tr><tr><td>47</td><td><code><pre>        c := &amp;HttpApiClient{}</pre></code></td></tr><tr><td>48</td><td><code><pre>        c.baseUrl = baseUrl</pre></code></td></tr><tr><td>49</td><td><code><pre>        c.httpClient = &amp;http.Client{</pre></code></td></tr><tr><td>50</td><td><code><pre>                Transport: &amp;http.Transport{</pre></code></td></tr><tr><td>51</td><td><code><pre>                        MaxIdleConnsPerHost: MaxIdleConnections,</pre></code></td></tr><tr><td>52</td><td><code><pre>                },</pre></code></td></tr><tr><td>53</td><td><code><pre>                Timeout: time.Duration(RequestTimeout) * time.Second,</pre></code></td></tr><tr><td>54</td><td><code><pre>        }</pre></code></td></tr><tr><td>55</td><td><code><pre>        return c</pre></code></td></tr><tr><td>56</td><td><code><pre>}</pre></code></td></tr></table>
+
+<div class="funcname" id="fn_HttpApiClient.request">func HttpApiClient.request</div><div class="info"><a href="#s_fn_HttpApiClient.request">Back</a><p>In <code>/Users/miolini/go/src/github.com/miolini/bankgo/httpapi/client/client.go</code>:</p></div><table class="listing">
+<tr><td>83</td><td><code><pre>func (c *HttpApiClient) request(method, reqUrl string, jsonResponse interface{}, jsonRequest interface{}) error {</pre></code></td></tr><tr><td>84</td><td><code><pre>        var bodyReader *bytes.Buffer</pre></code></td></tr><tr><td>85</td><td><code><pre>        if jsonRequest != nil {</pre></code></td></tr><tr><td>86</td><td><code><pre>                data, err := json.Marshal(jsonRequest)</pre></code></td></tr><tr><td>87</td><td><code><pre>                if err != nil {</pre></code></td></tr><tr class="miss"><td>88</td><td><code><pre>                        return err</pre></code></td></tr><tr><td>89</td><td><code><pre>                }</pre></code></td></tr><tr><td>90</td><td><code><pre>                bodyReader = bytes.NewBuffer(data)</pre></code></td></tr><tr><td>91</td><td><code><pre>        } else {</pre></code></td></tr><tr><td>92</td><td><code><pre>                bodyReader = &amp;bytes.Buffer{}</pre></code></td></tr><tr><td>93</td><td><code><pre>        }</pre></code></td></tr><tr><td>94</td><td><code><pre>        reqUrl = fmt.Sprintf(&#34;%s%s&#34;, c.baseUrl, reqUrl)</pre></code></td></tr><tr><td>95</td><td><code><pre>        log.Printf(&#34;request %s %s&#34;, method, reqUrl)</pre></code></td></tr><tr><td>96</td><td><code><pre>        req, err := http.NewRequest(method, reqUrl, bodyReader)</pre></code></td></tr><tr><td>97</td><td><code><pre>        if err != nil {</pre></code></td></tr><tr class="miss"><td>98</td><td><code><pre>                return err</pre></code></td></tr><tr><td>99</td><td><code><pre>        }</pre></code></td></tr><tr><td>100</td><td><code><pre>        res, err := c.httpClient.Do(req)</pre></code></td></tr><tr><td>101</td><td><code><pre>        if err != nil {</pre></code></td></tr><tr class="miss"><td>102</td><td><code><pre>                return err</pre></code></td></tr><tr><td>103</td><td><code><pre>        }</pre></code></td></tr><tr><td>104</td><td><code><pre>        defer res.Body.Close()</pre></code></td></tr><tr><td>105</td><td><code><pre>        responseData := bytes.Buffer{}</pre></code></td></tr><tr><td>106</td><td><code><pre>        _, err = io.Copy(&amp;responseData, res.Body)</pre></code></td></tr><tr><td>107</td><td><code><pre>        if err != nil {</pre></code></td></tr><tr class="miss"><td>108</td><td><code><pre>                return err</pre></code></td></tr><tr><td>109</td><td><code><pre>        }</pre></code></td></tr><tr><td>110</td><td><code><pre>        log.Printf(&#34;http response: %s&#34;, responseData.Bytes())</pre></code></td></tr><tr><td>111</td><td><code><pre>        return json.NewDecoder(&amp;responseData).Decode(jsonResponse)</pre></code></td></tr><tr><td>112</td><td><code><pre>}</pre></code></td></tr></table>
+
+<div class="funcname" id="fn_HttpApiClient.PostTransaction">func HttpApiClient.PostTransaction</div><div class="info"><a href="#s_fn_HttpApiClient.PostTransaction">Back</a><p>In <code>/Users/miolini/go/src/github.com/miolini/bankgo/httpapi/client/client.go</code>:</p></div><table class="listing">
+<tr><td>70</td><td><code><pre>func (c *HttpApiClient) PostTransaction(userID int64, amount int64) (int64, error) {</pre></code></td></tr><tr><td>71</td><td><code><pre>        request := PostTransactionRequest{UserID: userID, Value: amount}</pre></code></td></tr><tr><td>72</td><td><code><pre>        var response PostTransactionResponse</pre></code></td></tr><tr><td>73</td><td><code><pre>        err := c.request(&#34;POST&#34;, &#34;/transaction&#34;, &amp;response, &amp;request)</pre></code></td></tr><tr><td>74</td><td><code><pre>        if err != nil {</pre></code></td></tr><tr class="miss"><td>75</td><td><code><pre>                return 0, err</pre></code></td></tr><tr><td>76</td><td><code><pre>        }</pre></code></td></tr><tr><td>77</td><td><code><pre>        if response.Error != &#34;&#34; {</pre></code></td></tr><tr class="miss"><td>78</td><td><code><pre>                return 0, fmt.Errorf(&#34;response err: %s&#34;, response.Error)</pre></code></td></tr><tr><td>79</td><td><code><pre>        }</pre></code></td></tr><tr><td>80</td><td><code><pre>        return response.Response.Value, nil</pre></code></td></tr><tr><td>81</td><td><code><pre>}</pre></code></td></tr></table>
+
+<div class="funcname" id="fn_HttpApiClient.GetBalances">func HttpApiClient.GetBalances</div><div class="info"><a href="#s_fn_HttpApiClient.GetBalances">Back</a><p>In <code>/Users/miolini/go/src/github.com/miolini/bankgo/httpapi/client/client.go</code>:</p></div><table class="listing">
+<tr><td>58</td><td><code><pre>func (c *HttpApiClient) GetBalances() ([]BalanceRecord, error) {</pre></code></td></tr><tr><td>59</td><td><code><pre>        var response GetBalanceResponse</pre></code></td></tr><tr><td>60</td><td><code><pre>        err := c.request(&#34;GET&#34;, &#34;/balances&#34;, &amp;response, nil)</pre></code></td></tr><tr><td>61</td><td><code><pre>        if err != nil {</pre></code></td></tr><tr class="miss"><td>62</td><td><code><pre>                return nil, err</pre></code></td></tr><tr><td>63</td><td><code><pre>        }</pre></code></td></tr><tr><td>64</td><td><code><pre>        if response.Error != &#34;&#34; {</pre></code></td></tr><tr class="miss"><td>65</td><td><code><pre>                return nil, fmt.Errorf(&#34;response err: %s&#34;, response.Error)</pre></code></td></tr><tr><td>66</td><td><code><pre>        }</pre></code></td></tr><tr><td>67</td><td><code><pre>        return response.Response, err</pre></code></td></tr><tr><td>68</td><td><code><pre>}</pre></code></td></tr></table>
+
+<!-- Can be parsed by external script
+PACKAGE:github.com/miolini/bankgo/httpapi/client DONE:80.49
+-->
+
+<div id="pkg_github.com/miolini/bankgo/rpc/client" class="funcname">Package Overview: github.com/miolini/bankgo/rpc/client <span class="packageTotal">33.33%</span></div><p>This is a coverage report created after analysis of the <code>github.com/miolini/bankgo/rpc/client</code> package. It 
+        has been generated with the following command:</p><pre class="cmd">gocov test github.com/miolini/bankgo/rpc/client | gocov-html</pre>        <p>Here are the stats. Please select a function name to view its implementation and see what's left for testing.</p><table class="overview">
+<tr id="s_fn_Connect"><td><code><a href="#fn_Connect">Connect(...)</a></code></td><td><code>github.com/miolini/bankgo/rpc/client/client.go</code></td><td class="percent"><code>85.71%</code></td><td class="linecount"><code>6/7</code></td></tr>
+<tr id="s_fn_BalanceStorageClient.IncrementValue"><td><code><a href="#fn_BalanceStorageClient.IncrementValue">BalanceStorageClient.IncrementValue(...)</a></code></td><td><code>github.com/miolini/bankgo/rpc/client/client.go</code></td><td class="percent"><code>80.00%</code></td><td class="linecount"><code>4/5</code></td></tr>
+<tr id="s_fn_BalanceStorageClient.AllBalances"><td><code><a href="#fn_BalanceStorageClient.AllBalances">BalanceStorageClient.AllBalances(...)</a></code></td><td><code>github.com/miolini/bankgo/rpc/client/client.go</code></td><td class="percent"><code>0.00%</code></td><td class="linecount"><code>0/7</code></td></tr>
+<tr id="s_fn_BalanceStorageClient.GetBalance"><td><code><a href="#fn_BalanceStorageClient.GetBalance">BalanceStorageClient.GetBalance(...)</a></code></td><td><code>github.com/miolini/bankgo/rpc/client/client.go</code></td><td class="percent"><code>0.00%</code></td><td class="linecount"><code>0/5</code></td></tr>
+<tr id="s_fn_BalanceStorageClient.SetValue"><td><code><a href="#fn_BalanceStorageClient.SetValue">BalanceStorageClient.SetValue(...)</a></code></td><td><code>github.com/miolini/bankgo/rpc/client/client.go</code></td><td class="percent"><code>0.00%</code></td><td class="linecount"><code>0/5</code></td></tr>
+<tr id="s_fn_BalanceStorageClient.Close"><td><code><a href="#fn_BalanceStorageClient.Close">BalanceStorageClient.Close(...)</a></code></td><td><code>github.com/miolini/bankgo/rpc/client/client.go</code></td><td class="percent"><code>0.00%</code></td><td class="linecount"><code>0/1</code></td></tr>
+<tr><td colspan="2"><code>github.com/miolini/bankgo/rpc/client</code></td><td class="percent"><code>33.33%</code></td><td class="linecount"><code>10/30</code></td></tr>
+</table>
+
+<div class="funcname" id="fn_Connect">func Connect</div><div class="info"><a href="#s_fn_Connect">Back</a><p>In <code>/Users/miolini/go/src/github.com/miolini/bankgo/rpc/client/client.go</code>:</p></div><table class="listing">
+<tr><td>19</td><td><code><pre>func Connect(addr string) (*BalanceStorageClient, error) {</pre></code></td></tr><tr><td>20</td><td><code><pre>        conn, err := grpc.Dial(addr, grpc.WithInsecure())</pre></code></td></tr><tr><td>21</td><td><code><pre>        if err != nil {</pre></code></td></tr><tr class="miss"><td>22</td><td><code><pre>                return nil, err</pre></code></td></tr><tr><td>23</td><td><code><pre>        }</pre></code></td></tr><tr><td>24</td><td><code><pre>        bsc := &amp;BalanceStorageClient{}</pre></code></td></tr><tr><td>25</td><td><code><pre>        bsc.conn = conn</pre></code></td></tr><tr><td>26</td><td><code><pre>        bsc.client = proto.NewBalanceStorageClient(bsc.conn)</pre></code></td></tr><tr><td>27</td><td><code><pre>        return bsc, nil</pre></code></td></tr><tr><td>28</td><td><code><pre>}</pre></code></td></tr></table>
+
+<div class="funcname" id="fn_BalanceStorageClient.IncrementValue">func BalanceStorageClient.IncrementValue</div><div class="info"><a href="#s_fn_BalanceStorageClient.IncrementValue">Back</a><p>In <code>/Users/miolini/go/src/github.com/miolini/bankgo/rpc/client/client.go</code>:</p></div><table class="listing">
+<tr><td>52</td><td><code><pre>func (bsc *BalanceStorageClient) IncrementValue(userID int64, amount int64) (int64, error) {</pre></code></td></tr><tr><td>53</td><td><code><pre>        request := proto.IncrementRequest{UserId: userID, Amount: amount}</pre></code></td></tr><tr><td>54</td><td><code><pre>        response, err := bsc.client.Increment(context.Background(), &amp;request)</pre></code></td></tr><tr><td>55</td><td><code><pre>        if err != nil {</pre></code></td></tr><tr class="miss"><td>56</td><td><code><pre>                return 0, err</pre></code></td></tr><tr><td>57</td><td><code><pre>        }</pre></code></td></tr><tr><td>58</td><td><code><pre>        return response.Value, nil</pre></code></td></tr><tr><td>59</td><td><code><pre>}</pre></code></td></tr></table>
+
+<div class="funcname" id="fn_BalanceStorageClient.AllBalances">func BalanceStorageClient.AllBalances</div><div class="info"><a href="#s_fn_BalanceStorageClient.AllBalances">Back</a><p>In <code>/Users/miolini/go/src/github.com/miolini/bankgo/rpc/client/client.go</code>:</p></div><table class="listing">
+<tr><td>61</td><td><code><pre>func (bsc *BalanceStorageClient) AllBalances() ([]BalanceRecord, error) {</pre></code></td></tr><tr class="miss"><td>62</td><td><code><pre>        response, err := bsc.client.All(context.Background(), &amp;proto.AllRequest{})</pre></code></td></tr><tr class="miss"><td>63</td><td><code><pre>        if err != nil {</pre></code></td></tr><tr class="miss"><td>64</td><td><code><pre>                return nil, err</pre></code></td></tr><tr><td>65</td><td><code><pre>        }</pre></code></td></tr><tr class="miss"><td>66</td><td><code><pre>        result := make([]BalanceRecord, len(response.Records))</pre></code></td></tr><tr class="miss"><td>67</td><td><code><pre>        for i := range response.Records {</pre></code></td></tr><tr class="miss"><td>68</td><td><code><pre>                result[i] = BalanceRecord{response.Records[i].UserId, response.Records[i].Value}</pre></code></td></tr><tr><td>69</td><td><code><pre>        }</pre></code></td></tr><tr class="miss"><td>70</td><td><code><pre>        return result, nil</pre></code></td></tr><tr><td>71</td><td><code><pre>}</pre></code></td></tr></table>
+
+<div class="funcname" id="fn_BalanceStorageClient.GetBalance">func BalanceStorageClient.GetBalance</div><div class="info"><a href="#s_fn_BalanceStorageClient.GetBalance">Back</a><p>In <code>/Users/miolini/go/src/github.com/miolini/bankgo/rpc/client/client.go</code>:</p></div><table class="listing">
+<tr><td>34</td><td><code><pre>func (bsc *BalanceStorageClient) GetBalance(userID int64) (int64, error) {</pre></code></td></tr><tr class="miss"><td>35</td><td><code><pre>        request := proto.GetRequest{UserId: userID}</pre></code></td></tr><tr class="miss"><td>36</td><td><code><pre>        response, err := bsc.client.Get(context.Background(), &amp;request)</pre></code></td></tr><tr class="miss"><td>37</td><td><code><pre>        if err != nil {</pre></code></td></tr><tr class="miss"><td>38</td><td><code><pre>                return 0, nil</pre></code></td></tr><tr><td>39</td><td><code><pre>        }</pre></code></td></tr><tr class="miss"><td>40</td><td><code><pre>        return response.Value, nil</pre></code></td></tr><tr><td>41</td><td><code><pre>}</pre></code></td></tr></table>
+
+<div class="funcname" id="fn_BalanceStorageClient.SetValue">func BalanceStorageClient.SetValue</div><div class="info"><a href="#s_fn_BalanceStorageClient.SetValue">Back</a><p>In <code>/Users/miolini/go/src/github.com/miolini/bankgo/rpc/client/client.go</code>:</p></div><table class="listing">
+<tr><td>43</td><td><code><pre>func (bsc *BalanceStorageClient) SetValue(userID int64, value int64) (int64, error) {</pre></code></td></tr><tr class="miss"><td>44</td><td><code><pre>        request := proto.SetRequest{UserId: userID, Value: value}</pre></code></td></tr><tr class="miss"><td>45</td><td><code><pre>        response, err := bsc.client.Set(context.Background(), &amp;request)</pre></code></td></tr><tr class="miss"><td>46</td><td><code><pre>        if err != nil {</pre></code></td></tr><tr class="miss"><td>47</td><td><code><pre>                return 0, err</pre></code></td></tr><tr><td>48</td><td><code><pre>        }</pre></code></td></tr><tr class="miss"><td>49</td><td><code><pre>        return response.Value, nil</pre></code></td></tr><tr><td>50</td><td><code><pre>}</pre></code></td></tr></table>
+
+<div class="funcname" id="fn_BalanceStorageClient.Close">func BalanceStorageClient.Close</div><div class="info"><a href="#s_fn_BalanceStorageClient.Close">Back</a><p>In <code>/Users/miolini/go/src/github.com/miolini/bankgo/rpc/client/client.go</code>:</p></div><table class="listing">
+<tr><td>30</td><td><code><pre>func (bsc *BalanceStorageClient) Close() {</pre></code></td></tr><tr class="miss"><td>31</td><td><code><pre>        bsc.conn.Close()</pre></code></td></tr><tr><td>32</td><td><code><pre>}</pre></code></td></tr></table>
+
+<!-- Can be parsed by external script
+PACKAGE:github.com/miolini/bankgo/rpc/client DONE:33.33
+-->
+
+<div id="summaryWrapper"><div class="package">Report Total</div>
+<div id="totalcov">60.56%</div>
+</div>
+    </body>
