@@ -22,9 +22,9 @@ Get all users balances.
             }
         ]
 
-## Set Balance [POST /transaction]
+## Create transaction [POST /transaction]
 
-Set balance of UserID to Value.
+Create transaction.
 
 + Request (application/json)
 
@@ -39,4 +39,3 @@ Set balance of UserID to Value.
             "UserID": 1,
             "Value": 15000
         }
-c
