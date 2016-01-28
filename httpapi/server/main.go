@@ -4,7 +4,7 @@ import (
 	"flag"
 	"log"
 
-	"github.com/miolini/bankgo/httpapi/common"
+	"github.com/miolini/bankgo/httpapi/server/common"
 )
 
 var (
