@@ -2,6 +2,8 @@
 
 Simple two app project represents simplest bank in the world ;-)
 
+![BankGo Logo](https://miolini.github.io/bankgo/bankgo.jpg)
+
 ## Deploy
 
 ```bash
