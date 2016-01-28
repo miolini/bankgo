@@ -34,13 +34,19 @@ func (bsc *BalanceStorageClient) Close() {
 func (bsc *BalanceStorageClient) GetBalance(userID int64) (int64, error) {
 	request := proto.GetRequest{UserId: userID}
 	response, err := bsc.client.Get(context.Background(), &request)
-	return response.Value, err
+	if err != nil {
+		return 0, nil
+	}
+	return response.Value, nil
 }
 
 func (bsc *BalanceStorageClient) SetValue(userID int64, value int64) (int64, error) {
 	request := proto.SetRequest{UserId: userID, Value: value}
 	response, err := bsc.client.Set(context.Background(), &request)
-	return response.Value, err
+	if err != nil {
+		return 0, err
+	}
+	return response.Value, nil
 }
 
 func (bsc *BalanceStorageClient) IncrementValue(userID int64, amount int64) (int64, error) {
