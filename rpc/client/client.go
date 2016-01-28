@@ -46,7 +46,10 @@ func (bsc *BalanceStorageClient) SetValue(userID int64, value int64) (int64, err
 func (bsc *BalanceStorageClient) IncrementValue(userID int64, amount int64) (int64, error) {
 	request := proto.IncrementRequest{UserId: userID, Amount: amount}
 	response, err := bsc.client.Increment(context.Background(), &request)
-	return response.Value, err
+	if err != nil {
+		return 0, err
+	}
+	return response.Value, nil
 }
 
 func (bsc *BalanceStorageClient) AllBalances() ([]BalanceRecord, error) {
