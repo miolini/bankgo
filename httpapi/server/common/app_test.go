@@ -3,12 +3,12 @@ package common
 import (
 	"log"
 	"testing"
-
 	"github.com/miolini/bankgo/rpc/server/common"
+	"net/http/httptest"
 )
 
 const (
-	servAddr = "localhost:14090"
+	servAddr = "localhost:15090"
 )
 
 func TestMain(m *testing.M) {
@@ -24,5 +24,5 @@ func TestMain(m *testing.M) {
 }
 
 func TestApiGetBalances(t *testing.T) {
-	
+	httptest.NewServer()
 }
