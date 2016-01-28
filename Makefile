@@ -5,12 +5,12 @@ build:
 	go build -o bankgo_rpc ./rpc/server
 
 docker_clean:
-	docker rmi -f bankgo_http
-	docker rmi -f bankgo_rpc
+	docker rmi -f bankgo_http || true
+	docker rmi -f bankgo_rpc || true
 
 docker_build:
-	docker build -t bankgo_http ./httpapi/server
-	docker build -t bankgo_rpc ./rpc/server
+	docker build -t bankgo/http ./httpapi/server
+	docker build -t bankgo/rpc ./rpc/server
 
 docker: docker_build
 	docker-compose up
